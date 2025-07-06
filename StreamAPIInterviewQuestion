@@ -1,0 +1,157 @@
+import java.util.*;
+import java.util.stream.*;
+
+class Employee {
+    String name;
+    String department;
+    double salary;
+    List<String> skills;
+
+    public Employee(String name, String department, double salary, List<String> skills) {
+        this.name = name;
+        this.department = department;
+        this.salary = salary;
+        this.skills = skills;
+    }
+
+    public String getDepartment() { return department; }
+    public String getName() { return name; }
+    public double getSalary() { return salary; }
+    public List<String> getSkills() { return skills; }
+
+    @Override
+    public String toString() {
+        return name + " (" + salary + ")";
+    }
+}
+
+public class EmployeeCollectorsDemo {
+    public static void main(String[] args) {
+        List<Employee> employees = List.of(
+            new Employee("Alice", "HR", 45000, List.of("Communication", "Onboarding")),
+            new Employee("Bob", "IT", 70000, List.of("Java", "Spring")),
+            new Employee("Charlie", "HR", 60000, List.of("Recruitment", "Excel")),
+            new Employee("David", "IT", 90000, List.of("Java", "AWS", "Docker")),
+            new Employee("Eve", "Finance", 75000, List.of("Accounting", "Excel"))
+        );
+
+        // 1. Grouping by department
+        Map<String, List<Employee>> employeesByDept = employees.stream()
+            .collect(Collectors.groupingBy(Employee::getDepartment));
+        System.out.println("\n1. Grouping by Department:");
+        employeesByDept.forEach((dept, list) -> System.out.println(dept + ": " + list));
+        // Output:
+        // HR: [Alice (45000.0), Charlie (60000.0)]
+        // IT: [Bob (70000.0), David (90000.0)]
+        // Finance: [Eve (75000.0)]
+
+        // 2. Partitioning by salary > 50000
+        Map<Boolean, List<Employee>> partitioned = employees.stream()
+            .collect(Collectors.partitioningBy(e -> e.getSalary() > 50000));
+        System.out.println("\n2. Partitioning by Salary > 50000:");
+        partitioned.forEach((k, v) -> System.out.println((k ? "High" : "Low") + ": " + v));
+        // Output:
+        // Low: [Alice (45000.0)]
+        // High: [Bob (70000.0), Charlie (60000.0), David (90000.0), Eve (75000.0)]
+
+        // 3. ToMap (name → salary)
+        Map<String, Double> nameToSalary = employees.stream()
+            .collect(Collectors.toMap(Employee::getName, Employee::getSalary));
+        System.out.println("\n3. Name to Salary Map:");
+        System.out.println(nameToSalary);
+        // Output:
+        // {Alice=45000.0, Bob=70000.0, Charlie=60000.0, David=90000.0, Eve=75000.0}
+
+        // 4. Mapping names per department
+        Map<String, List<String>> namesByDept = employees.stream()
+            .collect(Collectors.groupingBy(
+                Employee::getDepartment,
+                Collectors.mapping(Employee::getName, Collectors.toList())
+            ));
+        System.out.println("\n4. Names by Department:");
+        System.out.println(namesByDept);
+        // Output:
+        // {HR=[Alice, Charlie], IT=[Bob, David], Finance=[Eve]}
+
+        // 5. Max salary per department using reducing
+        Map<String, Double> maxSalaryByDept = employees.stream()
+            .collect(Collectors.groupingBy(
+                Employee::getDepartment,
+                Collectors.reducing(0.0, Employee::getSalary, Double::max)
+            ));
+        System.out.println("\n5. Max Salary by Department:");
+        System.out.println(maxSalaryByDept);
+        // Output:
+        // {HR=60000.0, IT=90000.0, Finance=75000.0}
+
+        // 6. Sorted names per department using collectingAndThen
+        Map<String, List<String>> sortedNames = employees.stream()
+            .collect(Collectors.groupingBy(
+                Employee::getDepartment,
+                Collectors.collectingAndThen(
+                    Collectors.mapping(Employee::getName, Collectors.toList()),
+                    list -> {
+                        list.sort(Comparator.naturalOrder());
+                        return list;
+                    }
+                )
+            ));
+        System.out.println("\n6. Sorted Names by Department:");
+        System.out.println(sortedNames);
+        // Output:
+        // {HR=[Alice, Charlie], IT=[Bob, David], Finance=[Eve]}
+
+        // 7. FlatMapping skills per department (Java 9+)
+        Map<String, Set<String>> skillsByDept = employees.stream()
+            .collect(Collectors.groupingBy(
+                Employee::getDepartment,
+                Collectors.flatMapping(e -> e.getSkills().stream(), Collectors.toSet())
+            ));
+        System.out.println("\n7. Skills by Department (FlatMapping):");
+        System.out.println(skillsByDept);
+        // Output:
+        // HR=[Communication, Onboarding, Excel, Recruitment]
+        // IT=[Spring, Java, Docker, AWS]
+        // Finance=[Accounting, Excel]
+
+        // 8. Salary statistics per department
+        Map<String, DoubleSummaryStatistics> salaryStats = employees.stream()
+            .collect(Collectors.groupingBy(
+                Employee::getDepartment,
+                Collectors.summarizingDouble(Employee::getSalary)
+            ));
+        System.out.println("\n8. Salary Stats by Department:");
+        salaryStats.forEach((dept, stats) -> {
+            System.out.printf("%s: avg=%.2f, max=%.2f, min=%.2f%n", dept, stats.getAverage(), stats.getMax(), stats.getMin());
+        });
+        // Output:
+        // HR: avg=52500.00, max=60000.00, min=45000.00
+        // IT: avg=80000.00, max=90000.00, min=70000.00
+        // Finance: avg=75000.00, max=75000.00, min=75000.00
+
+        // 9. Nested grouping: by department, then by salary range
+        Map<String, Map<String, List<Employee>>> nestedGroup = employees.stream()
+            .collect(Collectors.groupingBy(
+                Employee::getDepartment,
+                Collectors.groupingBy(e -> {
+                    if (e.getSalary() > 80000) return "High";
+                    else if (e.getSalary() > 50000) return "Medium";
+                    else return "Low";
+                })
+            ));
+        System.out.println("\n9. Nested Grouping by Department → Salary Range:");
+        nestedGroup.forEach((dept, rangeMap) -> {
+            System.out.println(dept + ":");
+            rangeMap.forEach((range, list) -> System.out.println("  " + range + " => " + list));
+        });
+        // Output:
+        // HR:
+        //   Low => [Alice (45000.0)]
+        //   Medium => [Charlie (60000.0)]
+        // IT:
+        //   Medium => [Bob (70000.0)]
+        //   High => [David (90000.0)]
+        // Finance:
+        //   Medium => [Eve (75000.0)]
+    }
+}
