@@ -1,7 +1,6 @@
 Java & Spring Boot Interview Preparation Questions
 -----------------------------------------------------------------
-What are compile-time and run-time exceptions?
-Will both types of exceptions be thrown? If yes, when? If no, why do we still need both?
+What are compile-time and run-time exceptions? Will both types of exceptions be thrown? If yes, when? If no, why do we still need both?
 How to define global exception handling in Spring Boot?
 What is @ControllerAdvice and how does it work?
 What are REST API Design Principles?
@@ -12,8 +11,7 @@ How does JWT-based authentication and authorization work?
 How do you create and manage sessions in Spring Boot?
 What are the different encoding mechanisms available in Spring Boot to secure API calls?
 How can you secure API responses in a Spring Boot application?
-What is a Servlet?
-How does it handle API calls internally?
+What is a Servlet?How does it handle API calls internally?
 What are the different types of beans in Spring? When should each type be used?
 What are the different ways to create a bean in Spring?
 What are alternatives to using @Autowired ?
@@ -26,11 +24,8 @@ What are the ways to make a Java application thread-safe?
 synchronized vs ReentrantLock — what’s the difference and when should each be used?
 What is the volatile keyword and why is it used?
 How does a Map work in Java?
-What is a synchronized HashMap ?
-What is a ConcurrentHashMap ?
-How do you remove duplicates from a HashMap ?
-Discuss concepts like ConcurrentModificationException , fail-fast vs fail-safe iterators, and
-modCount .
+What is a synchronized and Concurrent HashMap? What is the difference between them, and when should we use each 
+How do you remove duplicates from a HashMap ? Discuss concepts like ConcurrentModificationException , fail-fast vs fail-safe iterators, and modCount.
 What are the key features of Java 8?
 What is a functional interface? Where is it used? What are the types (system-defined and userdefined)?
 What is the Optional class? What are its types and how is it used (with examples)?
