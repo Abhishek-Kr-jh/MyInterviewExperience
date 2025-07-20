@@ -34,7 +34,7 @@ Can we use try without catch in Java?
 When and why should you use interfaces or abstract classes?
 What is the difference between them?
 Give examples of default and static methods in interfaces (both system-defined and user-defined).
-What is AOP (Aspect-Oriented Programming)? Why and when should you use AOP?
+What is AOP (Aspect-Oriented Programming)? Create an AOP, Why and when should you use AOP?
 What are Microservices? How do you handle failures in a microservices environment?
 What are the different ways microservices communicate with each other?
 How do you secure communication between microservices?
