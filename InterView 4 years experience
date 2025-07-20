@@ -1,53 +1,55 @@
 Java & Spring Boot Interview Preparation Questions
-1.	What are compile-time and run-time exceptions?
-2.	Will both types of exceptions be thrown? If yes, when? If no, why do we still need both?
-3.	How to define global exception handling in Spring Boot?
-4.	What is @ControllerAdvice and how does it work?
-5.	What are REST API Design Principles?
-6.	Can you provide examples of well-designed REST API URLs/URIs?
-7.	How does an API call reach the controller in Spring Boot?
-8.	What is the difference between authentication and authorization? How do they work?
-9.	How does JWT-based authentication and authorization work?
-10.	How do you create and manage sessions in Spring Boot?
-11.	What are the different encoding mechanisms available in Spring Boot to secure API calls?
-12.	How can you secure API responses in a Spring Boot application?
-13.	What is a Servlet?
-14.	How does it handle API calls internally?
-15.	What are the different types of beans in Spring? When should each type be used?
-16.	What are the different ways to create a bean in Spring?
-17.	What are alternatives to using @Autowired?
-18.	When should you use constructor injection, setter injection, and field injection?
-19.	What is serialization and deserialization? Why are they important?
-20.	How does a @RestController handle API requests and responses?
-21.	How does the controller handle exceptions?
-22.	How do you implement multithreading in a Spring Boot project?
-23.	What are the ways to make a Java application thread-safe?
-24.	synchronized vs ReentrantLock — what’s the difference and when should each be used?
-25.	What is the volatile keyword and why is it used?
-26.	How does a Map work in Java?
-27.	What is a synchronized HashMap?
-28.	What is a ConcurrentHashMap?
-29.	How do you remove duplicates from a HashMap?
-30.	Discuss concepts like ConcurrentModificationException, fail-fast vs fail-safe iterators, and modCount.
-31.	What are the key features of Java 8?
-32.	What is a functional interface? Where is it used? What are the types (system-defined and user-defined)?
-33.	What is the Optional class? What are its types and how is it used (with examples)?
-34.	What is encapsulation? How is it different from abstraction? How do you achieve encapsulation?
-35.	Can we use try without catch in Java?
-36.	When and why should you use interfaces or abstract classes?
-37.	What is the difference between them?
-38.	Give examples of default and static methods in interfaces (both system-defined and user-defined).
-39.	What is AOP (Aspect-Oriented Programming)? Why and when should you use AOP?
-40.	What are Microservices? How do you handle failures in a microservices environment?
-41.	What are the different ways microservices communicate with each other?
-42.	How do you secure communication between microservices?
-43.	How do you debug issues in a microservices environment?
-44.	How are static and dynamic IPs mapped in S3 using Route 53 (dynamic DNS routing)?
-45.	Which design patterns have you used in real projects?
-46.	How do you use JUnit and Mockito for unit testing?
-47.	What are the core components of a microservices architecture?
-48.	How does one microservice interact with another?
-49.	What is an API Gateway? What are its uses?
-50.	What is a Circuit Breaker and why is it used?
-51.	What is the best way to store credentials needed by multiple services?
-52.	How do you log API responses along with HTTP status codes after every API call?
+-----------------------------------------------------------------
+What are compile-time and run-time exceptions?
+Will both types of exceptions be thrown? If yes, when? If no, why do we still need both?
+How to define global exception handling in Spring Boot?
+What is @ControllerAdvice and how does it work?
+What are REST API Design Principles?
+Can you provide examples of well-designed REST API URLs/URIs?
+How does an API call reach the controller in Spring Boot?
+What is the difference between authentication and authorization? How do they work?
+How does JWT-based authentication and authorization work?
+How do you create and manage sessions in Spring Boot?
+What are the different encoding mechanisms available in Spring Boot to secure API calls?
+How can you secure API responses in a Spring Boot application?
+What is a Servlet?
+How does it handle API calls internally?
+What are the different types of beans in Spring? When should each type be used?
+What are the different ways to create a bean in Spring?
+What are alternatives to using @Autowired ?
+When should you use constructor injection, setter injection, and field injection?
+What is serialization and deserialization? Why are they important?
+How does a @RestController handle API requests and responses?
+How does the controller handle exceptions?
+How do you implement multithreading in a Spring Boot project?
+What are the ways to make a Java application thread-safe?
+synchronized vs ReentrantLock — what’s the difference and when should each be used?
+What is the volatile keyword and why is it used?
+How does a Map work in Java?
+What is a synchronized HashMap ?
+What is a ConcurrentHashMap ?
+How do you remove duplicates from a HashMap ?
+Discuss concepts like ConcurrentModificationException , fail-fast vs fail-safe iterators, and
+modCount .
+What are the key features of Java 8?
+What is a functional interface? Where is it used? What are the types (system-defined and userdefined)?
+What is the Optional class? What are its types and how is it used (with examples)?
+What is encapsulation? How is it different from abstraction? How do you achieve encapsulation?
+Can we use try without catch in Java?
+When and why should you use interfaces or abstract classes?
+What is the difference between them?
+Give examples of default and static methods in interfaces (both system-defined and user-defined).
+What is AOP (Aspect-Oriented Programming)? Why and when should you use AOP?
+What are Microservices? How do you handle failures in a microservices environment?
+What are the different ways microservices communicate with each other?
+How do you secure communication between microservices?
+How do you debug issues in a microservices environment?
+How are static and dynamic IPs mapped in S3 using Route 53 (dynamic DNS routing)?
+Which design patterns have you used in real projects?
+How do you use JUnit and Mockito for unit testing?
+What are the core components of a microservices architecture?
+How does one microservice interact with another?
+What is an API Gateway? What are its uses?
+What is a Circuit Breaker and why is it used?
+What is the best way to store credentials needed by multiple services?
+How do you log API responses along with HTTP status codes after every API call?
