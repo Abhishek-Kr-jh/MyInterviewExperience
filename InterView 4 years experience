@@ -51,3 +51,9 @@ How do you log API responses along with HTTP status codes after every API call?
 Find the Maximum Salary in each department using group by in Java.
 Find the maximum salary and the department name in Java. 
 Find the second maximum salary in SQL/Java. 
+Frequency Count of Characters using Streams
+Could you calculate the frequency of each word in the given string using Streams?
+Find the largest and second-largest numbers in the array using Streams.
+Return a Map with ID as key and salary as value from the list of employees using Streams.
+Find the Duplicate value in a given array using Streams.
+
