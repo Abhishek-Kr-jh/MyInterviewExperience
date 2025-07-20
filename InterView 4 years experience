@@ -48,3 +48,6 @@ What is an API Gateway? What are its uses?
 What is a Circuit Breaker and why is it used?
 What is the best way to store credentials needed by multiple services?
 How do you log API responses along with HTTP status codes after every API call?
+Find the Maximum Salary in each department using group by in Java.
+Find the maximum salary and the department name in Java. 
+Find the second maximum salary in SQL/Java. 
