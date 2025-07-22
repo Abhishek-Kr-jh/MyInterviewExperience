@@ -57,3 +57,6 @@ Find the largest and second-largest numbers in the array using Streams.
 Return a Map with ID as key and salary as value from the list of employees using Streams.
 Find the Duplicate value in a given array using Streams.
 
+Convert this input array String ["java", "spring", "boot"] to String = "JAVA,SPRING,BOOT"
+
+
