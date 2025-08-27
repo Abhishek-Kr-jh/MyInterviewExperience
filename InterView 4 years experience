@@ -59,4 +59,36 @@ Find the Duplicate value in a given array using Streams.
 
 Convert this input array String ["java", "spring", "boot"] to String = "JAVA,SPRING,BOOT"
 
+How many objects will be created in memory here 
+String s1 = "Abhishek";
+String s2 = "Kumar" + Abhishek;   // variable concat
+String s3 = s1 + s2;              // variable concat
+String s4 = "Abhishek";
+
+How does the Java memory management model work?
+How does a class loader work, and what are the different types of class loaders?
+What is the purpose of overriding equals() and hashCode() methods?
+What is StringJoiner in Java?
+Can you explain how the Stream API works?
+How would you detect duplicates in a list using Streams?
+How would you process a large CSV file using Streams?
+How do you filter and update elements using the Stream API?
+How do you handle exceptions and errors in microservices?
+How do transactions work in microservices?
+What is a transaction and the ACID property, and how can it be achieved in a microservice environment
+How do you handle transaction failures in microservices?
+How do you secure microservices?
+How do you configure multiple databases in a Spring Boot project?
+How do you perform profiling in your application?
+How would you call multiple microservices asynchronously for a list of objects?
+Example: If you have a list of orders and need to call different microservices based on status (OPEN, PENDING, COMPLETED), how would you do this asynchronously in parallel?
+
+What is the CAP theorem?
+When should you use SQL, and when should you use NoSQL databases?
+What is the difference between gRPC and REST communication?
+
+Explain the design patterns you have used in Spring Boot or in your application.
+Explain the SOLID principles and how you have applied them in your Spring Boot project.
+Design Video Streaming application using kafka
+
 
