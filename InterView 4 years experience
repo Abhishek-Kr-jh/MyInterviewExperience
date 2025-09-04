@@ -23,6 +23,7 @@ How do you implement multithreading in a Spring Boot project?
 What are the ways to make a Java application thread-safe?
 synchronized vs ReentrantLock — what’s the difference and when should each be used?
 What is the volatile keyword and why is it used?
+What are deadlock, Race conditions, and mutual exclusion?  
 How does a Map work in Java?
 What is a synchronized and Concurrent HashMap? What is the difference between them, and when should we use each 
 How do you remove duplicates from a HashMap ? Discuss concepts like ConcurrentModificationException , fail-fast vs fail-safe iterators, and modCount.
@@ -90,5 +91,10 @@ What is the difference between gRPC and REST communication?
 Explain the design patterns you have used in Spring Boot or in your application.
 Explain the SOLID principles and how you have applied them in your Spring Boot project.
 Design Video Streaming application using kafka
+
+Explain the MongoDB architecture.
+Join in mongodb
+how indexing is working ?
+
 
 
